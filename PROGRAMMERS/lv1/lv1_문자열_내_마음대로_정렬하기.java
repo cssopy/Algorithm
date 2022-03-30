@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 // 문자열 내 마음대로 정렬하기
-// 
+// 문자열배열을 문자열의 특정 인덱스를 기준으로 정렬하는 문제
 // https://programmers.co.kr/learn/courses/30/lessons/12915
 public class lv1_문자열_내_마음대로_정렬하기 {
 	public static void main(String[] args) {
