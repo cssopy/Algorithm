@@ -3,7 +3,7 @@ package Algorithm.PROGRAMMERS.lv1;
 // [1차] 다트 게임
 // 
 // https://programmers.co.kr/learn/courses/30/lessons/17682
-public class lv1_다트_게임 {
+public class lv1_다트_게임_0000000000 {
 	public static void main(String[] args) {
 		System.out.println((int) '0');
 		System.out.println((int) '9');
@@ -32,6 +32,6 @@ public class lv1_다트_게임 {
 			}
 		}
 
-		return answer;
+		return ans;
 	}
 }
