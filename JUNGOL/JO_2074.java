@@ -14,7 +14,7 @@ public class JO_2074 {
 		int n = Integer.parseInt(br.readLine());
 
 		String[][] map = new String[n][n];
-
+		
 		int i = 0;
 		int j = n / 2;
 		int cnt = 0;

@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
+a
 // 말이 되고픈 원숭이 (골드 4)
 // https://www.acmicpc.net/problem/1600
 public class BJ_1600 {
