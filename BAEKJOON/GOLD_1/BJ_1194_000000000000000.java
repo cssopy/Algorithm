@@ -10,7 +10,7 @@ public class BJ_1194_000000000000000 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
 		StringBuilder sb = new StringBuilder();
-
+a
 		st = new StringTokenizer(br.readLine());
 		// 세로 길이
 		int N = Integer.parseInt(st.nextToken());

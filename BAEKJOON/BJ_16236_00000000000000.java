@@ -4,9 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
+a
 // 아기 상어 (골드 3)
-// 
 // https://www.acmicpc.net/problem/16236
 public class BJ_16236_00000000000000 {
 	public static void main(String[] args) throws IOException {

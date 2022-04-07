@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
-
+a
 // 감시 (골드 5)
 // map에 cctv의 배치에서 나올 수 있는 사각지대의 최소값을 구하는 문제
 // https://www.acmicpc.net/problem/15683
