@@ -1,4 +1,4 @@
-package Algorithm.BAEKJOON;
+package Algorithm.BAEKJOON.GOLD_3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
