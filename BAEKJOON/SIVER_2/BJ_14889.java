@@ -66,4 +66,36 @@ public class BJ_14889 {
 		}
 		return Math.abs(to - tt);
 	}
+	
+	public static int getTS2(int N, int[][] S, boolean[] isSel) {
+		int io = 0, it = 0;
+		int[] ios = new int[N / 2];
+		int[] its = new int[N / 2];
+		for (int i = 0; i < N; i++) {
+			if (isSel[i]) {
+				ios[io++] = i;
+			} else {
+				its[it++] = i;
+			}
+		}
+
+		int to = 0, tt = 0;
+		for (int i = 0; i < N / 2; i++) {
+			for (int j = 0; j < N; j++) {
+				if (isSel[j]) {
+					if (ios[i] < j) {
+						to += S[ios[i]][j];
+						to += S[j][ios[i]];
+					}
+				} else {
+					if (its[i] < j) {
+						tt += S[its[i]][j];
+						tt += S[j][its[i]];
+					}
+				}
+			}
+		}
+
+		return Math.abs(to - tt);
+	}
 }
