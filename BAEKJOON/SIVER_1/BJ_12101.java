@@ -37,10 +37,13 @@ public class BJ_12101 {
             return;
         }
 
-        for (int i = 0; i < ns.length; i++) {
-            // 합이 문제에서 요구하는 n을 넘으면 탐색할 이유 없음
-            if (sum + ns[i] <= n) {
-                GS(n, k, ns, ans, sum + ns[i], f + "+" + ns[i]);
+        // 찾으면 더 진행할 필요없음
+        if (ans[0].toString() == "") {
+            for (int i = 0; i < ns.length; i++) {
+                // 합이 문제에서 요구하는 n을 넘으면 탐색할 이유 없음
+                if (sum + ns[i] <= n) {
+                    GS(n, k, ns, ans, sum + ns[i], f + "+" + ns[i]);
+                }
             }
         }
     }
