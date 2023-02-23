@@ -27,6 +27,7 @@ public class lv2_모음_사전 {
     }
 
     // DFS
+    // 사전의 순서가 DFS 탐색의 결과와 같음
     public static void findWord(char[] vowels, String word, String s, int depth, Object[] ans) {
         // 5자 넘거나 이미 찾았으면 return
         if (depth == 5 || (boolean) ans[1]) {
