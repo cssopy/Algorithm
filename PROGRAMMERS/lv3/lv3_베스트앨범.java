@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class lv2_베스트앨범 {
+public class lv3_베스트앨범 {
     public static void main(String[] args) {
         StringBuilder result = new StringBuilder();
 
