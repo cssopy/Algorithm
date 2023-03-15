@@ -11,10 +11,10 @@ let map = {
     nine: 9,
 }
 
+let reg = /zero|one|two|three|four|five|six|seven|eight|nine/g;
+
 function solution(numbers) {
-    for (let k in map) {
-        numbers = numbers.replaceAll(k, v=>map[v]);
-    }
+    return parseInt(numbers.replace(reg, v => map[v]));
 }
 
 let inps = [
