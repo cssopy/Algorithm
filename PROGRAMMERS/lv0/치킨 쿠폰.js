@@ -9,7 +9,7 @@ function solution(chicken) {
 
 let inps = [
     100,
-    1081 
+    1081
 ]
 
 inps.forEach(v => console.log(solution(v)));
