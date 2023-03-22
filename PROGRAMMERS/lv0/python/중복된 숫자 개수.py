@@ -1,5 +1,5 @@
 def solution(array, n):
-    return len(list(filter(lambda x:x==n, array)))
+    return array.count(n)
 
 inps = [
     [[1, 1, 2, 3, 4, 5], 1],
