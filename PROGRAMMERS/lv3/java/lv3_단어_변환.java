@@ -2,17 +2,13 @@ public class lv3_단어_변환 {
     public static void main(String[] args) {
         StringBuilder result = new StringBuilder();
 
-        String[][] bt = {
-                {"hit", "cog"},
-                {"hit", "cog"}
-        };
-        String[][] wordss = {
-                {"hot", "dot", "dog", "lot", "log", "cog"},
-                {"hot", "dot", "dog", "lot", "log"}
+        INP[] inps = {
+                new INP("hit", "cog", new String[]{"hot", "dot", "dog", "lot", "log", "cog"}),
+                new INP("hit", "cog", new String[]{"hot", "dot", "dog", "lot", "log"})
         };
 
-        for (int i = 0; i < bt.length; i++) {
-            result.append(solution(bt[i][0], bt[i][1], wordss[i])).append('\n');
+        for (INP inp : inps) {
+            result.append(solution(inp.begin, inp.target, inp.words)).append('\n');
         }
 
         System.out.println(result);
@@ -63,5 +59,17 @@ public class lv3_단어_변환 {
         }
 
         return dn <= 1 ? true : false;
+    }
+
+    static class INP {
+        String begin;
+        String target;
+        String[] words;
+
+        INP(String begin, String target, String[] words) {
+            this.begin = begin;
+            this.target = target;
+            this.words = words;
+        }
     }
 }
