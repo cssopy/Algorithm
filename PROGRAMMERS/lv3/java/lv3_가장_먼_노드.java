@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class lv3_가장_먼_노드 {
     public static void main(String[] args) {
@@ -25,23 +24,20 @@ public class lv3_가장_먼_노드 {
             graph[e[1]][e[0]] = true;
         }
 
-        PriorityQueue<Node> q = new PriorityQueue<>(Comparator.comparingInt(a -> a.depth));
+        Queue<Node> q = new LinkedList<>();
         boolean[] isVisited = new boolean[n + 1];
         q.add(new Node(1, 0));
         isVisited[1] = true;
 
-        // 가장 멀리 떨어진(깊은) 노드 개수
-        int ans = 0;
+        // 거리(깊이) 당 노드 개수
+        int[][] ans = new int[n][1];
         // 가장 먼 거리(깊이)
         int md = -1;
         while (!q.isEmpty()) {
             Node cn = q.poll();
 
-            if (cn.depth > md) {
-                ans = 0;
-                md = cn.depth;
-            }
-            ans++;
+            ans[cn.depth][0]++;
+            md = Math.max(md, cn.depth);
 
             for (int i = 1; i <= n; i++) {
                 if (!isVisited[i] && graph[cn.num][i]) {
@@ -51,7 +47,7 @@ public class lv3_가장_먼_노드 {
             }
         }
 
-        return ans;
+        return ans[md][0];
     }
 
     static class Node {
