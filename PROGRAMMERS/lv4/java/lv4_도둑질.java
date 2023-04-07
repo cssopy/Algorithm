@@ -15,7 +15,7 @@ public class lv4_도둑질 {
 
     public static int solution(int[] money) {
         // 원형이기에 첫번째와 끝값은 함께 고련될 수 없기에 각각을 기준으로 두개의 dp배열 생성
-        // i까지 최대로 훔칠 수 있는 값을 저장할 배열
+        // i집까지 최대로 훔칠 수 있는 값을 저장할 배열
         int[][] dp = new int[2][money.length];
         for (int i = 0; i < 2; i++) {
             dp[i][1] = money[i];
