@@ -19,8 +19,8 @@ public class lv2_스킬트리 {
     public static int solution(String skill, String[] skill_trees) {
         // 선행 스킬 순서에 해당하는 스킬들
         Set<Character> set = new HashSet<>();
-        for (int i = 0; i < skill.length(); i++) {
-            set.add(skill.charAt(i));
+        for (char sk : skill.toCharArray()) {
+            set.add(sk);
         }
 
         // 가능한 스킬트리 개수, 선행 스킬 순서
