@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Stack;
 
 public class lvN_유전법칙 {
@@ -34,50 +33,30 @@ public class lvN_유전법칙 {
     }
 
     static String findCharacteristics(int[] query) {
+        // 2세대까지 각 조상들이 몇번째인지 조사
         int[] ancestors = getAncestors(query);
-        for (int i = 1; i < ancestors.length; i++) {
-            if (ancestors[i] == 1) return "RR";
-            if (ancestors[i] == 0) return "rr";
+        int top = ancestors.length - 1;
+        // 조상이 RR 또는 rr이면 자손은 모든 RR 또는 rr만 가능
+        while (top != -1) {
+            int n = ancestors[top--];
+
+            if (n == 1) return "RR";
+            if (n == 0) return "rr";
         }
+        // 그 외 모든 경우는 Rr
         return "Rr";
     }
 
     static int[] getAncestors(int[] query) {
-        ArrayList<Integer> ancestors = new ArrayList<>();
-        for (int i = query[0], a = query[1]; i >= 1; i--) {
-            ancestors.add(a);
+        // 조상들이 각각 몇번째인지 저장할 스택배열
+        int top = -1;
+        int[] ancestors = new int[query[0] - 1];
+        // 현재세대부터 2세대까지 접근
+        for (int i = query[0], a = query[1]; i >= 2; i--) {
+            ancestors[++top] = a % 4;
             a = (int) Math.ceil(a / 4.0);
         }
 
-        return ancestors.stream().sorted().mapToInt(i -> i % 4).toArray();
-    }
-
-    public static String[] solution2(int[][] queries) {
-        String[] ans = new String[queries.length];
-        for (int i = 0; i < ans.length; i++) {
-            ans[i] = getGene(queries[i]);
-        }
-
-        return ans;
-    }
-
-    static String getGene(int[] query) {
-        Stack<Integer> stack = new Stack<>();
-
-        // 부모의
-        query[1]--;
-        while (query[0] > 1) {
-            stack.push(query[1] % 4);
-            query[0]--;
-            query[1] = query[1] / 4;
-        }
-
-        while (!stack.isEmpty()) {
-            int num = stack.pop();
-            if (num == 0) return "RR";
-            if (num == 3) return "rr";
-        }
-
-        return "Rr";
+        return ancestors;
     }
 }
