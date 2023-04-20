@@ -30,7 +30,7 @@ function isDestroyed(today, b, termsMap) {
     //     bd = bd - 1 === 0 ? 28 : bd - 1;
     // }
 
-    if (ty * 12 * 28 + tm * 28 + td > by * 12 * 28 + bm * 28 + bd + termsMap.get(bp) * 28) return true;
+    if (ty * 12 * 28 + tm * 28 + td >= by * 12 * 28 + bm * 28 + bd + termsMap.get(bp) * 28) return true;
     return false;
 }
 
