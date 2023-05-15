@@ -32,15 +32,8 @@ public class lv3_경주로_건설 {
         q.add(new Point(0, 0, 0, -1));
 
         int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-        int answer = Integer.MAX_VALUE;
         while (!q.isEmpty()) {
             Point cp = q.poll();
-
-            // 도착하여도 이후에 더 적은 비용이 존재할 수 있으므로 계속 진행
-            if (cp.r == cp.c && cp.r == board.length - 1) {
-                answer = Math.min(answer, cp.cost);
-                continue;
-            }
 
             for (int dir = 0; dir < dirs.length; dir++) {
                 int nr = cp.r + dirs[dir][0];
@@ -63,6 +56,11 @@ public class lv3_경주로_건설 {
             }
         }
 
+        // 모든 방향에서 도착지에 들어온 비용 중 최소비용을 구함
+        int answer = Integer.MAX_VALUE;
+        for (int i = 0; i < 4; i++) {
+            answer = Math.min(answer, costTable[i][board.length - 1][board.length - 1]);
+        }
         return answer;
     }
 
