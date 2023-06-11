@@ -7,7 +7,9 @@ public class BJ_15721 {
             int T = sc.nextInt();
             int slogan = sc.nextInt();
 
+            // 게임을 시작하고 진행한 사람 수
             int answer = -1;
+            // 뻔, 데기가 외쳐진 횟수
             int[] bndNum = {0, 0};
             for (int N = 1, f = 0; ; N++) {
                 // 뻔 데기 뻔 데기
